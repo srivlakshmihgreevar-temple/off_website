@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLocation } from 'react-router-dom'
-import './Navbar.css'
+import './NavBar.css'
 
 export default function Navbar() {
   const navRef = useRef(null)
