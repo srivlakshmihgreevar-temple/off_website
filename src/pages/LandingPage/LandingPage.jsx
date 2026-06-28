@@ -17,6 +17,7 @@ import DarshanSchedule from '../../components/LandingPage/DarshanSchedule'
 import TempleGallery from '../../components/LandingPage/TempleGallery'
 import VisitSection from '../../components/LandingPage/VisitSection'
 
+gsap.registerPlugin(ScrollTrigger, TextPlugin)
 function splitIntoCharSpans(element) {
     // Only split direct text nodes, leave child elements untouched
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
@@ -62,8 +63,6 @@ export default function LandingPage() {
   const card9Ref = useRef(null)
   
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, TextPlugin)
-
     const stage = stageRef.current
     if (!stage) return
 
@@ -228,8 +227,12 @@ export default function LandingPage() {
         }, '<')
 
     }, stageRef)
+    return () => {
+      ctx.revert()
+      ScrollTrigger.normalizeScroll(false) 
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
 
-    return () => ctx.revert() // Completely tears down scroll triggers when unmounting
   }, [])
 
   return (
