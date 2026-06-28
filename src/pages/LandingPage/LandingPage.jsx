@@ -17,26 +17,7 @@ import DarshanSchedule from '../../components/LandingPage/DarshanSchedule'
 import TempleGallery from '../../components/LandingPage/TempleGallery'
 import VisitSection from '../../components/LandingPage/VisitSection'
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin)
-
-export default function LandingPage() {
-  usePageTitle('Sri Hayagreeva Perumal Temple, Chivada')
-  
-  const stageRef = useRef(null)
-  const leftTrackRef = useRef(null)
-  const deityRef = useRef(null)
-  const card3Ref = useRef(null)
-  const card3TextRef = useRef(null)
-  const foundationRef = useRef(null)
-  const card4Ref  = useRef(null)
-  const card5Ref  = useRef(null)
-  const card4EntriesRef = useRef([])  // for staggered schedule entry animation
-  const card6Ref  = useRef(null)
-  const card7Ref  = useRef(null)
-  const card6ActiveRef = useRef(0)  
-  const card8Ref = useRef(null);
-  const card9Ref = useRef(null)
-  function splitIntoCharSpans(element) {
+function splitIntoCharSpans(element) {
     // Only split direct text nodes, leave child elements untouched
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT)
     const textNodes = []
@@ -62,7 +43,27 @@ export default function LandingPage() {
 
     return element.querySelectorAll('span')
   }
+export default function LandingPage() {
+  usePageTitle('Sri Hayagreeva Perumal Temple, Chivada')
+  
+  const stageRef = useRef(null)
+  const leftTrackRef = useRef(null)
+  const deityRef = useRef(null)
+  const card3Ref = useRef(null)
+  const card3TextRef = useRef(null)
+  const foundationRef = useRef(null)
+  const card4Ref  = useRef(null)
+  const card5Ref  = useRef(null)
+  const card4EntriesRef = useRef([])  // for staggered schedule entry animation
+  const card6Ref  = useRef(null)
+  const card7Ref  = useRef(null)
+  const card6ActiveRef = useRef(0)  
+  const card8Ref = useRef(null);
+  const card9Ref = useRef(null)
+  
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, TextPlugin)
+
     const stage = stageRef.current
     if (!stage) return
 
