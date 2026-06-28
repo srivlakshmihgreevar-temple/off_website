@@ -1,0 +1,160 @@
+/* src/components/Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Serif+Tamil:wght@400&display=swap');
+
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem clamp(1.5rem, 4vw, 4rem);
+
+  /* Glass-dark backdrop matching the temple palette */
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 0, 1, 0.88) 0%,
+    rgba(4, 0, 1, 0.60) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+
+  /* Slide-in managed by GSAP; start hidden */
+  will-change: transform, opacity;
+}
+
+/* ── Brand ─────────────────────────────────────── */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand-tamil {
+  font-family: 'Noto Serif Tamil', serif;
+  font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+  font-weight: 400;
+  color: #F0EEE8;
+  letter-spacing: 0.04em;
+}
+
+.navbar-brand-divider {
+  display: block;
+  width: 1px;
+  height: 1.1rem;
+  background: rgba(201, 162, 39, 0.45);
+}
+
+.navbar-brand-english {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.55rem, 0.85vw, 0.72rem);
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C9A227;
+}
+
+/* ── Nav links ─────────────────────────────────── */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.52rem, 0.78vw, 0.65rem);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #B8B0A8;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+/* Underline sweep on hover */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, #C9A227, transparent);
+  transition: width 0.35s ease;
+}
+.navbar-link:hover { color: #F5C518; }
+.navbar-link:hover::after { width: 100%; }
+
+/* Active link — current page indicator */
+.navbar-link--active {
+  color: #F5C518;
+}
+.navbar-link--active::after {
+  width: 100%;
+  background: linear-gradient(to right, #C9A227, #F5C518);
+}
+
+/* Donate CTA active (on /donate page) */
+.navbar-cta--active {
+  border-color: rgba(201, 162, 39, 0.8);
+  color: #F5C518;
+  background: linear-gradient(135deg, rgba(245,197,24,0.14), rgba(245,197,24,0.05));
+}
+
+/* ── CTA ───────────────────────────────────────── */
+.navbar-cta {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.5rem, 0.75vw, 0.62rem);
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #C9A227;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  padding: 0.55em 1.4em;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.35s ease, color 0.35s ease;
+}
+
+.navbar-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245,197,24,0.12), rgba(245,197,24,0.03));
+  transform: translateX(-101%);
+  transition: transform 0.35s ease;
+}
+.navbar-cta:hover::before  { transform: translateX(0); }
+.navbar-cta:hover          { border-color: rgba(201, 162, 39, 0.7); color: #F5C518; }
+
+.navbar-cta-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-style: normal;
+}
+.navbar-cta:hover .navbar-cta-arrow { transform: translateX(4px); }
+
+/* ── Mobile ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
+  .navbar-brand-english { display: none; }
+}
+
+.site-navbar {
+  /* existing properties stay — update padding-top and padding-bottom: */
+  padding: calc((var(--navbar-h) - 1.2em) / 2) clamp(1.5rem, 4vw, 4rem);
+  /* This derives top/bottom padding from --navbar-h so if you ever
+     change --navbar-h, the navbar and all cards update together */
+}

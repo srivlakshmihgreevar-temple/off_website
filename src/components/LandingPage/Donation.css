@@ -1,0 +1,259 @@
+/* src/components/LandingPage/DonationCard.css */
+
+/* ── Header ── */
+.card-8-header {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card-8-title {
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  letter-spacing: 0.12em;
+}
+
+/* ── Body: three-column flex ── */
+.card-8-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1060px;
+  gap: 0;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Left causes column ── */
+.card-8-causes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2.5rem 0 0;
+}
+
+.cause-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.2rem 0;
+}
+
+.cause-icon {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  line-height: 1;
+}
+
+.cause-eyebrow {
+  margin-bottom: 0.15rem;
+}
+
+.cause-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cause-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-dim);
+  letter-spacing: 0.06em;
+}
+
+.cause-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.75rem, 1.05vw, 0.9rem);
+  font-weight: 300;
+  color: var(--white-dim);
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+.cause-cta {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+}
+
+.cause-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 162, 39, 0.22),
+    transparent
+  );
+  margin: 0.2rem 0;
+}
+
+/* ── Center vertical separator ── */
+.card-8-separator {
+  flex: 0 0 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 2rem;
+}
+
+.card-8-sep-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(201, 162, 39, 0.35),
+    rgba(201, 162, 39, 0.35),
+    transparent
+  );
+}
+
+.card-8-sep-ornament {
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ── Right subscription panel ── */
+.card-8-subscription {
+  flex: 0 0 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 2.5rem;
+}
+
+.subscription-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid rgba(245, 197, 24, 0.28);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 60px rgba(245, 197, 24, 0.05),
+    inset 0 0 120px rgba(180, 30, 20, 0.08),
+    0 0 40px rgba(245, 197, 24, 0.06);
+  background: linear-gradient(
+    160deg,
+    rgba(122, 10, 40, 0.18) 0%,
+    rgba(4, 0, 1, 0.0) 60%
+  );
+}
+
+.subscription-deity-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ── Amount ── */
+.subscription-amount-block {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.subscription-currency {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  color: var(--gold-dim);
+  line-height: 1;
+}
+
+.subscription-amount {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-shadow:
+    0 0 20px rgba(245, 197, 24, 0.45),
+    0 0 40px rgba(245, 197, 24, 0.2);
+}
+
+.subscription-frequency {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--white-dim);
+  letter-spacing: 0.08em;
+}
+
+/* ── Benefits ── */
+.subscription-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.subscription-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+  font-weight: 300;
+  color: var(--white-dim);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.subscription-benefit-item strong {
+  color: var(--white);
+  font-weight: 400;
+}
+
+.benefit-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  flex-shrink: 0;
+  margin-top: 0.45em;
+}
+
+/* ── Subscribe CTA ── */
+.subscription-cta {
+  margin-top: 0.6rem;
+  width: 100%;
+  justify-content: center;
+  font-size: clamp(0.5rem, 0.75vw, 0.62rem);
+  letter-spacing: 0.3em;
+}
+
+/* ── Fine print ── */
+.subscription-fine-print {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.55rem, 0.78vw, 0.65rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(184, 176, 168, 0.5);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
