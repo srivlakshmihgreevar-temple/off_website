@@ -8,7 +8,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 import './LandingPage.css'
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/NavBar'
 import EventCarousel from '../../components/LandingPage/EventCarousel'
 import Donation from "../../components/LandingPage/Donation"
 import ContactCard from '../../components/LandingPage/ContactCard'
