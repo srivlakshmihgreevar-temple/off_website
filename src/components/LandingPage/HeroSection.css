@@ -31,10 +31,6 @@ body {
 @property --glow-color {
   syntax: '<color>';
   inherits: false;
-  initial-value: #4a0319; /* Increased luminance base red */
-}
-
-@property --glow-color {
   initial-value: #7a0a28;
 }
 
