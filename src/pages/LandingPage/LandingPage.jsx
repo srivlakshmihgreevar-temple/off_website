@@ -63,13 +63,17 @@ export default function LandingPage() {
   const card9Ref = useRef(null)
   
   useEffect(() => {
+
+    
     const stage = stageRef.current
     if (!stage) return
 
     // 1. SMOOTH OUT WHEEL INTERACTION JITTER NATIVELY
     // This bypasses the erratic "notches" of standard mousewheels and tracks beautifully.
-    // ScrollTrigger.normalizeScroll(true);
-    ScrollTrigger.normalizeScroll({ allowNestedScroll: true })
+    ScrollTrigger.normalizeScroll({ 
+      allowNestedScroll: true,
+      momentum: self => Math.min(2, self) // cap momentum so triggers fire reliably
+    })
 
 
     // 2. FORCE GSAP TO CACHE ALL PROP CONFIGURATIONS AHEAD OF TIME

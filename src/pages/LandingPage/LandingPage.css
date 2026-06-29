@@ -153,10 +153,10 @@
 /* ADD: Card 4 base */
 .card-4 {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 0;
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
   background: radial-gradient(
     ellipse 80% 90% at 50% 50%,
     #2a0410 0%,
@@ -230,10 +230,11 @@
 /* ── Card 5 ── */
 .card-5 {
   position: absolute;
-  top: 0;
+  top: 5%;
+  padding:1rem;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   z-index: 0;
   display: flex;
   flex-direction: column;
@@ -463,6 +464,7 @@
   -ms-overflow-style: none;
   /* Room for hover lift */
   padding-bottom: 3rem;
+  justify-content: center;
 }
 
 .polaroid-strip::-webkit-scrollbar { display: none; }
@@ -937,10 +939,10 @@
 
 .card-8 {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   z-index: 0;
   display: flex;
   flex-direction: column;

@@ -25,6 +25,7 @@ export default function Navbar() {
         start: 'top top',
         end: '+=200%',
         onUpdate: (self) => {
+          console.log(self.progress)
           if (self.progress >= 0.48) {
             gsap.to(nav, { yPercent: 0, opacity: 1, duration: 0.6, ease: 'power2.out' })
           } else {
